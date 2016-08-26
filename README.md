@@ -13,9 +13,9 @@ CSS
 font-awesome
 
 ##デモ環境
-https://submission-code.herokuapp.com/
+http://tk2-251-35336.vs.sakura.ne.jp/alluser/page/
 
-###デモ環境
-topページ
-profileページ
+###デモ環境ページ一覧
+topページ  
+profileページ  
 editページ
