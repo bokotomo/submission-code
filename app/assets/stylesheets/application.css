@@ -1,0 +1,114 @@
+@charset "utf-8";
+html, body, div, span,h1, h2, h3, h4, h5, h6, p,a,code,del, dfn, em, font, img, i, ul, li,form,tr, th, td {margin: 0;padding: 0;}
+img,div{border-width:0px;}
+a{text-decoration: none;}
+body{font-family: 'Helvetica Neue', Helvetica,'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;overflow-x: hidden;background: #fff;}
+p::selection,a::selection,h3::selection{background: #3383ae;color: #fff;}
+p::selection,a::-moz-selection ,h3::-moz-selection{background: #3383ae;color: #fff;}
+input:focus{outline:none;}
+textarea:focus{outline:none;}
+textarea{resize:none;}
+
+a:hover{text-decoration: underline;}
+
+div::selection,h2::selection {
+	background: #75cff0;
+}
+div::-moz-selection,h2::-moz-selection {
+	background: #75cff0;
+}
+
+.clearfix:after{
+  content: "."; 
+  display: block; 
+  height: 0; 
+  font-size:0;	
+  clear: both; 
+  visibility:hidden;
+}
+
+#header{
+	height: 60px;box-shadow:1px 0px 1px 0px #333;position: relative;
+}
+.header_title{
+	font-size: 18px;color: #45494B;font-weight: bold;
+}
+#top{
+	background: #f2f2f2;height:320px;
+}
+#contents{
+	width: 980px;
+	margin:auto;
+}
+#contents .left_contents{
+	width: 640px;
+	float:left;
+	border-right: 1px solid #EBEDEF;
+	box-sizing: border-box;
+	padding: 40px 40px 40px 0px;
+}
+#contents .right_contents{
+	width: 340px;
+	float:left;
+	box-sizing: border-box;
+}
+
+/*左のコンテンツ*/
+.left_contents_header{
+
+}
+.left_contents_header_title{
+	font-size:18px;font-weight: bold;color:#495055;float: left;
+}
+.left_contents_header_add{
+	padding:5px 15px;color:#00A4BB;border-radius: 3px;border:1px solid #00A4BB;font-size:12px;float:right;cursor: pointer;
+}
+.left_contents_header_edit{
+	padding:3px 15px;color:#666c6e;border-radius: 3px;border:1px solid #e5e5e5;font-size:12px;float:right;cursor: pointer;background:#f1f1f1
+}
+.left_contents_skils_area{
+	margin-top:20px;position:relative;height:34px;
+}
+.left_contents_skils_bar{
+	width:600px;height:1px;margin-top:16px;background: #e5eaef;position: absolute;
+}
+.left_contents_skils_contents{
+	width:600px;height:30px;position: absolute;
+}
+.left_contents_skils_number{
+	color:#00A4BB;text-align: center;width:30px;height: 30px;line-height: 30px;border-radius: 30px;font-size:14px;border: 2px solid #00A4BB;font-weight: 500;float:left;background: #fff;position: relative;
+}
+.left_contents_skils_number_done{
+	color:#fff;text-align: center;width:34px;height: 34px;line-height: 34px;border-radius: 34px;font-size:14px;font-weight: 500;float:left;background: #6A6E71;position: relative;
+	}
+.left_contents_skils_number_plus{
+	position: absolute;right:-5px;bottom:-5px;background: #00A4BB;color:#fff;width: 15px;height:15px;line-height: 16px;border-radius: 15px;font-size:10px;
+}
+.left_contents_skils_text{
+	float:left;padding:0px 20px 0px 10px;color:#495055;height: 30px;line-height: 30px;background: #fff;font-weight: 300;
+}
+.left_contents_skils_user{
+	float:right;background: #fff;padding-left: 5px;
+}
+.left_contents_skils_user_img{
+	display: block;width:30px;height:30px;border-radius: 30px;background-size: cover;background-position: 50% 50%;
+}
+.left_contents_skils_underlist{
+	padding-top:20px;
+}
+
+.skils_underlist_tag{
+	margin-right: 10px;float: left;margin-bottom: 10px;
+}
+.skils_underlist_tag_number{
+	color:#00A4BB;text-align: center;width:24px;height: 24px;line-height: 24px;border-radius: 24px;font-size:12px;border: 2px solid #00A4BB;font-weight: 500;float:left;background: #fff;	position: relative;
+}
+.skils_underlist_tag_number_done{
+	color:#fff;text-align: center;width:28px;height: 28px;line-height: 28px;border-radius: 28px;font-size:13px;font-weight: 500;float:left;background: #6A6E71;position: relative;
+	}
+.skils_underlist_tag_number_plus{
+	position: absolute;right:-6px;bottom:-5px;background: #00A4BB;color:#fff;width: 14px;height:14px;line-height: 14px;border-radius: 15px;font-size:10px;
+}
+.skils_underlist_tag_text{
+	float:left;padding:0px 20px 0px 10px;color:#495055;height: 28px;line-height: 28px;background: #fff;font-weight: 300;
+}
