@@ -13,9 +13,10 @@ CSS
 font-awesome
 
 ##デモ環境
-http://tk2-251-35336.vs.sakura.ne.jp/alluser/page/
+http://tk2-251-35336.vs.sakura.ne.jp:3000/
 
 ###デモ環境ページ一覧
 topページ  
 profileページ  
-editページ
+editページ  
+skillページ

@@ -85,7 +85,10 @@ div::-moz-selection,h2::-moz-selection {
 	position: absolute;right:-5px;bottom:-5px;background: #00A4BB;color:#fff;width: 15px;height:15px;line-height: 16px;border-radius: 15px;font-size:10px;
 }
 .left_contents_skils_text{
-	float:left;padding:0px 20px 0px 10px;color:#495055;height: 30px;line-height: 30px;background: #fff;font-weight: 300;
+	float:left;padding:0px 20px 0px 10px;height: 30px;line-height: 30px;background: #fff;font-weight: 300;
+}
+.left_contents_skils_text a{
+	color:#495055;
 }
 .left_contents_skils_user{
 	float:right;background: #fff;padding-left: 5px;

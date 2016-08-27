@@ -2,6 +2,8 @@ Page::Application.routes.draw do
   get "users/profile"
 
   get "users/edit"
+ 
+  get "users/skill"
 
   get "users/index"
 
