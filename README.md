@@ -6,12 +6,12 @@
 ##使用言語
 Ruby on Rails  
 React.js  
-sqlite
+SQLite 
 HTML  
 CSS
 
 ##実装できていない部分
-編集ページの編集機能は見た目はできましたが機能が未完成です。
+マイページの編集機能が未完成です。(見た目のみ)
 
 ##webfont
 font-awesome
