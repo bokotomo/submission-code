@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   
   #変数
-  @@myid = 5#自分のID
+  @@myid = 6#自分のID
   
   #プロフィールページ
   def profile
@@ -31,6 +31,17 @@ class UsersController < ApplicationController
 	end
 
 
+  	
+  	#skillを追加したかckeck
+  	@check_skill_user_arr = []
+  	@user_skill_data_top.each do |res|
+	  	sql_str = "select * from skill_check_users where receive_user_id = #{@get_user_id} AND skill_id = #{res.skill_id} AND send_user_id = #{@get_my_id}"
+	  	user_skill_data = User.find_by_sql(sql_str)	
+	  	@check_skill_user_arr.push(user_skill_data)	
+	end
+
+
+
   	#スキルユーザ一覧下部_10個取得
   	sql_str = "select *,COUNT(*) AS num from skill_check_users as c_u INNER JOIN skill_infos as s_i ON c_u.skill_id = s_i.id where c_u.receive_user_id = #{@get_user_id} GROUP BY skill_id ORDER BY num DESC LIMIT 6,10"
   	@user_skill_data_bottom = SkillCheckUsers.find_by_sql(sql_str)
@@ -58,6 +69,7 @@ class UsersController < ApplicationController
 	  	@skill_user_arr.push(user_skill_data)	
 	end
 	
+
   	#スキルユーザ一覧下部_10個取得
   	@sql_str = "select *,COUNT(*) AS num from skill_check_users as c_u INNER JOIN skill_infos as s_i ON c_u.skill_id = s_i.id where c_u.receive_user_id = #{@@myid} GROUP BY skill_id ORDER BY num DESC LIMIT 6,10"
   	@user_skill_data_bottom = SkillCheckUsers.find_by_sql(@sql_str)

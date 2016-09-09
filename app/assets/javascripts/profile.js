@@ -86,10 +86,8 @@ var ProfileSkillFormButton = React.createClass({
 React.render(<ProfileSkillFormButton />, document.getElementById("component_profile_add_skill_form"));
 
 
-
+//スキル追加ボタンの処理
 function add_skill_button(skill_id){
-	
 	document.getElementById('get_skill_id').value = skill_id;
 	document.getElementById('add_skill_plus_submit').submit();
-	
 }

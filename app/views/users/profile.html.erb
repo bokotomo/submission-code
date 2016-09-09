@@ -35,6 +35,7 @@
 						</div>
 					</div>
 					
+						
 					<div class="left_contents_skils_toplist">
 						
 						<% indexcount = 0 %>
@@ -42,7 +43,8 @@
 						<div class="left_contents_skils_area">
 							<div class="left_contents_skils_bar"></div>
 							<div class="left_contents_skils_contents">
-								<% if res.send_user_id != @get_my_id then %>
+								
+								<% if @check_skill_user_arr[indexcount].count == 0 then %>
 								<div class="left_contents_skils_number" onclick="add_skill_button(<%= res.skill_id %>);"><%= res.num %><div class="left_contents_skils_number_plus"><i class="fa fa-plus" aria-hidden="true"></i></div></div>
 								<% else %>
 								<div class="left_contents_skils_number_done"><%= res.num %></div>

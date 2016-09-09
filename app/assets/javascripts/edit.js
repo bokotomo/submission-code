@@ -55,7 +55,6 @@ React.render(<EditSkilsButtonCancel />, document.getElementById("component_edit_
 
 
 
-
 //新しいスキルを入力して確定キーボタン
 var EditSkilsInputButton = React.createClass({
 	getInitialState: function(){
@@ -81,6 +80,24 @@ var EditSkilsInputButton = React.createClass({
 React.render(<EditSkilsInputButton />, document.getElementById("component_edit_skils_input"));
 
 
+//スキルタグ
+var EditSkilsTagButton = React.createClass({
+	getInitialState: function(){
+		return {counter: 0};
+	},
+	handleClick: function(){
+		
+	},
+	render: function(){
+		return(
+			<div className="clearfix edit_skils_top_tag">
+				<div className="edit_skils_top_tag_num">1</div>
+				<div className="edit_skils_top_tag_name">n</div>
+				<div className="edit_skils_top_tag_batu" onClick={this.handleClick}><i className="fa fa-times" aria-hidden="true"></i></div>
+			</div>
+		);
+	}
+});
 
 //スキルタグ一覧
 var EditSkilsAllTags = React.createClass({
@@ -89,16 +106,17 @@ var EditSkilsAllTags = React.createClass({
 	},
 	render: function(){
 		return(
-		<div></div>
+			<div>
+			</div>
 		);
 	}
 });
-React.render(<EditSkilsAllTags />, document.getElementById("component_skills_area"));
+//React.render(<EditSkilsAllTags />, document.getElementById("component_skills_area"));
 
 
 
 
-//スキル編集エリア
+//スキル編集エリア<EditSkilsTagButton />
 var Main = React.createClass({
 	getInitialState: function(){
 		return {counter: 0};
@@ -118,6 +136,11 @@ React.render(<Main />, document.getElementById("edit_skils_area"));
 
 
 
+
+
+
+
+
 //編集エリア表示
 function show_edit_area(){	
 	document.getElementsByClassName("left_contents_skils_toplist")[0].style.display = "none";
@@ -133,7 +156,6 @@ function hide_edit_area(){
 	document.getElementsByClassName("skils_edit_button")[0].style.display = "block";
 	document.getElementById("component_edit_skils").style.display = "none";
 }
-
 
 //クラス全てrenderする関数
 function renderClassElement(toRender, elements) {
