@@ -6,7 +6,13 @@
   <link rel="stylesheet" href="http://codeserver.xsrv.jp/font/font-awesome/css/font-awesome.min.css">
     <script src="http://fb.me/react-0.13.3.js"></script>
     <script src="http://fb.me/JSXTransformer-0.13.3.js"></script>
-    <script src="/assets/users.js" type="text/jsx"></script>
+    <% if request.path_info == "/users/edit" then %>
+    <script src="/assets/edit.js" type="text/jsx"></script>
+    <% elsif request.path_info == "/users/profile" then %>
+    <script src="/assets/profile.js" type="text/jsx"></script>
+    <% elsif request.path_info == "/users/skill" then %>
+    <script src="/assets/skill.js" type="text/jsx"></script>
+    <% end %>
   <%= csrf_meta_tags %>
 </head>
 <body>

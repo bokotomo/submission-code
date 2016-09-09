@@ -1,161 +1,105 @@
+<script>
+//変数の宣言
+var edit_tag_arr = new Array();	
+<%
+arr = []
+arr.push(@user_skill_data_top)
+arr.push(@user_skill_data_bottom)
+
+@arr_json = arr.to_json.html_safe
+%>
+
+edit_tag_arr = [<%= @arr_json %>];
+
+
+</script>
+
 <div>
 	<header id="header">
 		<div style="padding:0px 8px;line-height: 60px;">
 			<a href="../"><h1 class="header_title">TestPage</h1></a>
 		</div>
 	</header>
-	<div id="top"></div>
+	<div id="top" style="background-image: url('<%= @user_data.user_img %>');"></div>
 	<div id="contents">
 		<div class="contents_top clearfix">
+				<div class="clearfix" style="margin-top: -60px;">
+					<div class="profile_user_img" style="background-image: url('<%= @user_data.user_img %>');"></div>
+					<div class="profile_user_name"><%= @user_data.user_name %></div>
+					
+				</div>
 			<div class="left_contents">
 				
-				<div class="left_contents_skils">
+				<div class="left_contents_skils" onclick="show_edit_area();" style="cursor: pointer;">
 					<div class="left_contents_header clearfix">
 						<h2 class="left_contents_header_title">スキル・特徴</h2>
-						<div class="left_contents_header_edit"><i class="fa fa-pencil" aria-hidden="true"></i> 編集する</div>
+
+						<div class="skils_edit_button"></div>
 					</div>
-					
-					<div class="left_contents_skils_toplist">
+					<div id="component_edit_skils">
+						<div class="edit_skils_area">
+							<div class="clearfix edit_skils_top">
+								<div id="edit_skils_top_wrapper">
+									<div id="component_skills_area"></div>
+								<% @user_skill_data_top.each do |res| %>
+								<div class="clearfix edit_skils_top_tag">
+									<div class="edit_skils_top_tag_num"><%= res.num %></div>
+									<div class="edit_skils_top_tag_name"><%= res.skill_name %></div>
+									<div class="edit_skils_top_tag_batu"><i class="fa fa-times" aria-hidden="true"></i></div>
+								</div>
+								<% end %>
+								<% @user_skill_data_bottom.each do |res| %>
+								<div class="clearfix edit_skils_top_tag">
+									<div class="edit_skils_top_tag_num"><%= res.num %></div>
+									<div class="edit_skils_top_tag_name"><%= res.skill_name %></div>
+									<div class="edit_skils_top_tag_batu"><i class="fa fa-times" aria-hidden="true"></i></div>
+								</div>
+								<% end %>
+								</div>
+								<div id="component_edit_skils_input"></div>
+							</div>
 							
-						<div class="left_contents_skils_area">
-							<div class="left_contents_skils_bar"></div>
-							<div class="left_contents_skils_contents">
-								<div class="left_contents_skils_number">21</div>
-								<div class="left_contents_skils_text">okdowk</div>
-								<div class="left_contents_skils_user">
-									<a href="./profile" class="left_contents_skils_user_img" style="background-image: url('https://tm-pilbox.global.ssl.fastly.net/?url=https%3A%2F%2Ftm-prod.global.ssl.fastly.net%2Fuploaded%2Fcompanies%2F632%2Foffice%2F757%2Ff1.jpg&h=295&w=400');"></a>
+							<div class="edit_skils_bottom">
+								<p style="color: #838a8e;font-size: 14px;margin-bottom: 5px;">おすすめのスキル</p>
+								<div class="clearfix">										
+									<% @user_skill_data_recommend.each do |res| %>
+									<div class="edit_skils_bottom_button"><%= res.skill_name %></div>
+									<% end %>
 								</div>
-								<div class="left_contents_skils_user">
-									<a href="./profile" class="left_contents_skils_user_img" style="background-image: url('https://tm-pilbox.global.ssl.fastly.net/?url=https%3A%2F%2Ftm-prod.global.ssl.fastly.net%2Fuploaded%2Fcompanies%2F632%2Foffice%2F757%2Ff1.jpg&h=295&w=400');"></a>
-								</div>
-								<div class="left_contents_skils_user">
-									<a href="./profile" class="left_contents_skils_user_img" style="background-image: url('https://tm-pilbox.global.ssl.fastly.net/?url=https%3A%2F%2Ftm-prod.global.ssl.fastly.net%2Fuploaded%2Fcompanies%2F632%2Foffice%2F757%2Ff1.jpg&h=295&w=400');"></a>
-								</div>
-								<div class="left_contents_skils_user">
-									<a href="./profile" class="left_contents_skils_user_img" style="background-image: url('https://tm-pilbox.global.ssl.fastly.net/?url=https%3A%2F%2Ftm-prod.global.ssl.fastly.net%2Fuploaded%2Fcompanies%2F632%2Foffice%2F757%2Ff1.jpg&h=295&w=400');"></a>
-								</div>
-							</div>						
-						</div>	
-						
-						<div class="left_contents_skils_area">
-							<div class="left_contents_skils_bar"></div>
-							<div class="left_contents_skils_contents">
-								<div class="left_contents_skils_number">21</div>
-								<div class="left_contents_skils_text">okdowk</div>
-								<div class="left_contents_skils_user">
-									<a href="./profile" class="left_contents_skils_user_img" style="background-image: url('https://tm-pilbox.global.ssl.fastly.net/?url=https%3A%2F%2Ftm-prod.global.ssl.fastly.net%2Fuploaded%2Fcompanies%2F632%2Foffice%2F757%2Ff1.jpg&h=295&w=400');"></a>
-								</div>
-								<div class="left_contents_skils_user">
-									<a href="./profile" class="left_contents_skils_user_img" style="background-image: url('https://tm-pilbox.global.ssl.fastly.net/?url=https%3A%2F%2Ftm-prod.global.ssl.fastly.net%2Fuploaded%2Fcompanies%2F632%2Foffice%2F757%2Ff1.jpg&h=295&w=400');"></a>
-								</div>
-								<div class="left_contents_skils_user">
-									<a href="./profile" class="left_contents_skils_user_img" style="background-image: url('https://tm-pilbox.global.ssl.fastly.net/?url=https%3A%2F%2Ftm-prod.global.ssl.fastly.net%2Fuploaded%2Fcompanies%2F632%2Foffice%2F757%2Ff1.jpg&h=295&w=400');"></a>
-								</div>
-								<div class="left_contents_skils_user">
-									<a href="./profile" class="left_contents_skils_user_img" style="background-image: url('https://tm-pilbox.global.ssl.fastly.net/?url=https%3A%2F%2Ftm-prod.global.ssl.fastly.net%2Fuploaded%2Fcompanies%2F632%2Foffice%2F757%2Ff1.jpg&h=295&w=400');"></a>
-								</div>
-							</div>						
-						</div>	
-						
-						<div class="left_contents_skils_area">
-							<div class="left_contents_skils_bar"></div>
-							<div class="left_contents_skils_contents">
-								<div class="left_contents_skils_number">21</div>
-								<div class="left_contents_skils_text">okdowk</div>
-								<div class="left_contents_skils_user">
-									<a href="./profile" class="left_contents_skils_user_img" style="background-image: url('https://tm-pilbox.global.ssl.fastly.net/?url=https%3A%2F%2Ftm-prod.global.ssl.fastly.net%2Fuploaded%2Fcompanies%2F632%2Foffice%2F757%2Ff1.jpg&h=295&w=400');"></a>
-								</div>
-								<div class="left_contents_skils_user">
-									<a href="./profile" class="left_contents_skils_user_img" style="background-image: url('https://tm-pilbox.global.ssl.fastly.net/?url=https%3A%2F%2Ftm-prod.global.ssl.fastly.net%2Fuploaded%2Fcompanies%2F632%2Foffice%2F757%2Ff1.jpg&h=295&w=400');"></a>
-								</div>
-								<div class="left_contents_skils_user">
-									<a href="./profile" class="left_contents_skils_user_img" style="background-image: url('https://tm-pilbox.global.ssl.fastly.net/?url=https%3A%2F%2Ftm-prod.global.ssl.fastly.net%2Fuploaded%2Fcompanies%2F632%2Foffice%2F757%2Ff1.jpg&h=295&w=400');"></a>
-								</div>
-								<div class="left_contents_skils_user">
-									<a href="./profile" class="left_contents_skils_user_img" style="background-image: url('https://tm-pilbox.global.ssl.fastly.net/?url=https%3A%2F%2Ftm-prod.global.ssl.fastly.net%2Fuploaded%2Fcompanies%2F632%2Foffice%2F757%2Ff1.jpg&h=295&w=400');"></a>
-								</div>
-							</div>						
-						</div>	
-						<div class="left_contents_skils_area">
-							<div class="left_contents_skils_bar"></div>
-							<div class="left_contents_skils_contents">
-								<div class="left_contents_skils_number">21</div>
-								<div class="left_contents_skils_text">okdowk</div>
-								<div class="left_contents_skils_user">
-									<a href="./profile" class="left_contents_skils_user_img" style="background-image: url('https://tm-pilbox.global.ssl.fastly.net/?url=https%3A%2F%2Ftm-prod.global.ssl.fastly.net%2Fuploaded%2Fcompanies%2F632%2Foffice%2F757%2Ff1.jpg&h=295&w=400');"></a>
-								</div>
-								<div class="left_contents_skils_user">
-									<a href="./profile" class="left_contents_skils_user_img" style="background-image: url('https://tm-pilbox.global.ssl.fastly.net/?url=https%3A%2F%2Ftm-prod.global.ssl.fastly.net%2Fuploaded%2Fcompanies%2F632%2Foffice%2F757%2Ff1.jpg&h=295&w=400');"></a>
-								</div>
-								<div class="left_contents_skils_user">
-									<a href="./profile" class="left_contents_skils_user_img" style="background-image: url('https://tm-pilbox.global.ssl.fastly.net/?url=https%3A%2F%2Ftm-prod.global.ssl.fastly.net%2Fuploaded%2Fcompanies%2F632%2Foffice%2F757%2Ff1.jpg&h=295&w=400');"></a>
-								</div>
-								<div class="left_contents_skils_user">
-									<a href="./profile" class="left_contents_skils_user_img" style="background-image: url('https://tm-pilbox.global.ssl.fastly.net/?url=https%3A%2F%2Ftm-prod.global.ssl.fastly.net%2Fuploaded%2Fcompanies%2F632%2Foffice%2F757%2Ff1.jpg&h=295&w=400');"></a>
-								</div>
-							</div>						
-						</div>	
-						<div class="left_contents_skils_area">
-							<div class="left_contents_skils_bar"></div>
-							<div class="left_contents_skils_contents">
-								<div class="left_contents_skils_number">21</div>
-								<div class="left_contents_skils_text">okdowk</div>
-								<div class="left_contents_skils_user">
-									<a href="./profile" class="left_contents_skils_user_img" style="background-image: url('https://tm-pilbox.global.ssl.fastly.net/?url=https%3A%2F%2Ftm-prod.global.ssl.fastly.net%2Fuploaded%2Fcompanies%2F632%2Foffice%2F757%2Ff1.jpg&h=295&w=400');"></a>
-								</div>
-								<div class="left_contents_skils_user">
-									<a href="./profile" class="left_contents_skils_user_img" style="background-image: url('https://tm-pilbox.global.ssl.fastly.net/?url=https%3A%2F%2Ftm-prod.global.ssl.fastly.net%2Fuploaded%2Fcompanies%2F632%2Foffice%2F757%2Ff1.jpg&h=295&w=400');"></a>
-								</div>
-								<div class="left_contents_skils_user">
-									<a href="./profile" class="left_contents_skils_user_img" style="background-image: url('https://tm-pilbox.global.ssl.fastly.net/?url=https%3A%2F%2Ftm-prod.global.ssl.fastly.net%2Fuploaded%2Fcompanies%2F632%2Foffice%2F757%2Ff1.jpg&h=295&w=400');"></a>
-								</div>
-								<div class="left_contents_skils_user">
-									<a href="./profile" class="left_contents_skils_user_img" style="background-image: url('https://tm-pilbox.global.ssl.fastly.net/?url=https%3A%2F%2Ftm-prod.global.ssl.fastly.net%2Fuploaded%2Fcompanies%2F632%2Foffice%2F757%2Ff1.jpg&h=295&w=400');"></a>
-								</div>
-							</div>						
-						</div>	
-						<div class="left_contents_skils_area">
-							<div class="left_contents_skils_bar"></div>
-							<div class="left_contents_skils_contents">
-								<div class="left_contents_skils_number">21</div>
-								<div class="left_contents_skils_text">okdowk</div>
-								<div class="left_contents_skils_user">
-									<a href="./profile" class="left_contents_skils_user_img" style="background-image: url('https://tm-pilbox.global.ssl.fastly.net/?url=https%3A%2F%2Ftm-prod.global.ssl.fastly.net%2Fuploaded%2Fcompanies%2F632%2Foffice%2F757%2Ff1.jpg&h=295&w=400');"></a>
-								</div>
-								<div class="left_contents_skils_user">
-									<a href="./profile" class="left_contents_skils_user_img" style="background-image: url('https://tm-pilbox.global.ssl.fastly.net/?url=https%3A%2F%2Ftm-prod.global.ssl.fastly.net%2Fuploaded%2Fcompanies%2F632%2Foffice%2F757%2Ff1.jpg&h=295&w=400');"></a>
-								</div>
-								<div class="left_contents_skils_user">
-									<a href="./profile" class="left_contents_skils_user_img" style="background-image: url('https://tm-pilbox.global.ssl.fastly.net/?url=https%3A%2F%2Ftm-prod.global.ssl.fastly.net%2Fuploaded%2Fcompanies%2F632%2Foffice%2F757%2Ff1.jpg&h=295&w=400');"></a>
-								</div>
-								<div class="left_contents_skils_user">
-									<a href="./profile" class="left_contents_skils_user_img" style="background-image: url('https://tm-pilbox.global.ssl.fastly.net/?url=https%3A%2F%2Ftm-prod.global.ssl.fastly.net%2Fuploaded%2Fcompanies%2F632%2Foffice%2F757%2Ff1.jpg&h=295&w=400');"></a>
-								</div>
-							</div>						
+							</div>
+							<div class="clearfix" style="margin-top: 20px;">
+								<div id="component_edit_skils_ok"></div>
+								<div id="component_edit_skils_cancel"></div>
+							</div>
 						</div>
+					</div>
+					<div class="left_contents_skils_toplist">
+						<% indexcount = 0 %>
+						<% @user_skill_data_top.each do |res| %>
+						<div class="left_contents_skils_area">
+							<div class="left_contents_skils_bar"></div>
+							<div class="left_contents_skils_contents">
+								<div class="left_contents_skils_number"><%= res.num %></div>
+								<div class="left_contents_skils_text"><%= res.skill_name %></div>
+								<% @skill_user_arr[indexcount].each do |res2| %>
+								<div class="left_contents_skils_user">
+									<a href="./profile?id=<%= res2.id %>" class="left_contents_skils_user_img" style="background-image: url('<%= res2.user_img %>');"></a>
+								</div>
+								<% end %>
+							</div>						
+						</div>	
+						<% indexcount+=1 %>
+
+						<% end %>
 					</div>
 					
 					<div class="left_contents_skils_underlist">
+						<% @user_skill_data_bottom.each do |res| %>
 						<div class="skils_underlist_tag">
-							<div class="skils_underlist_tag_number">3</div>
-							<div class="skils_underlist_tag_text">oこんにko</div>
+							<div class="skils_underlist_tag_number"><%= res.num %></div>
+							<div class="skils_underlist_tag_text"><%= res.skill_name %></div>
 						</div>
-						<div class="skils_underlist_tag">
-							<div class="skils_underlist_tag_number">3</div>
-							<div class="skils_underlist_tag_text">oこんにko</div>
-						</div>
-						<div class="skils_underlist_tag">
-							<div class="skils_underlist_tag_number">3</div>
-							<div class="skils_underlist_tag_text">oこんにko</div>
-						</div>
-						<div class="skils_underlist_tag">
-							<div class="skils_underlist_tag_number">3</div>
-							<div class="skils_underlist_tag_text">oこんにko</div>
-						</div>
-						<div class="skils_underlist_tag">
-							<div class="skils_underlist_tag_number">3</div>
-							<div class="skils_underlist_tag_text">oこんにko</div>
-						</div>
+						<% end %>
 					</div>		
 				</div>
 				

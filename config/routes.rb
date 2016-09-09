@@ -4,6 +4,8 @@ Page::Application.routes.draw do
   get "users/edit"
  
   get "users/skill"
+  
+  post "users/add_skill"
 
   get "users/index"
 

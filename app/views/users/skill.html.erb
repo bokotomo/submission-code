@@ -1,4 +1,7 @@
 <div>
+<form action="" method="post">
+	<input type="hidden" id="get_skill_id" value="<%= @get_skill_id %>">
+</form>
 	<header id="header">
 		<div style="padding:0px 8px;line-height: 60px;">
 			<a href="../"><h1 class="header_title">TestPage</h1></a>
@@ -6,8 +9,28 @@
 	</header>
 	<div id="contents">
 		<div class="clearfix" style="padding:40px 0px 30px 0px;border-bottom: 1px solid #e5eaef;">
-		<h2 style="font-size: 40px;color: #35393b">HTML/CSS</h2>
-		<div style="background: #00A4BB;color: #fff;padding:8px 25px;border:1px solid #627881;border-radius: 3px;font-size: 14px;float: left;margin-top:5px;cursor: pointer;">自分のスキルに追加</div>
+			<h2 style="font-size: 40px;color: #35393b"><%= @skill_info.skill_name %></h2>
+			
+			<div id="component_skillpage_add_skill"></div>
+		</div>
+		
+		<div style="margin-top: 40px;">
+			<p style="font-size: 14px;color:#a9b1b7;font-weight: bold;"><%= @skill_info.skill_name %> をスキルに持つ人</p>
+			<div class="other_skil_user_area_wrap">
+
+				<% @user_skills.each do |res| %>
+				<a href="./profile?id=<%= res.receive_user_id %>" class="other_skil_user_area">
+					<div class="other_skil_user_area_top">
+						<div class="other_skil_user_area_top_img" style="background-image: url('<%= res.user_img %>');"></div>
+						<p class="other_skil_user_area_top_name"><%= res.user_name %></p>
+					</div>
+					<div class="other_skil_user_area_bottom">
+						<div class="other_skil_user_area_bottom_point"><%= res.num %>の評価</div>
+					</div>
+				</a>
+				<% end %>
+			
+			</div>
 		</div>
 	</div>
 </div>
