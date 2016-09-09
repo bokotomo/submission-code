@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   
   #変数
-  @@myid = 6#自分のID
+  @@myid = 1#自分のID
   
   #プロフィールページ
   def profile

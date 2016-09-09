@@ -3,6 +3,9 @@
 
 2 ディレクトリ内でrails sで実行
 
+##デモ環境
+http://tk2-251-35336.vs.sakura.ne.jp:3000/
+
 ##使用言語
 Ruby on Rails  
 React.js  
@@ -22,9 +25,6 @@ CSS
 
 ##webfont
 font-awesome
-
-##デモ環境
-http://tk2-251-35336.vs.sakura.ne.jp:3000/
 
 ###デモ環境ページ一覧
 topページ  
